@@ -107,7 +107,7 @@ if($state -eq "present") {
             $result.changed = $true
 
             if($registryValue -ne $null) {
-                $newRegistryKey | New-ItemProperty -Name $registryValue -Value $registryData -Force -PropertyType $registryDataType
+                $newRegistryKey | New-ItemProperty -Name $registryValue -Value $registryData -Force -PropertyType $registryDataType | Out-Null
                 $result.changed = $true
             }
         }
